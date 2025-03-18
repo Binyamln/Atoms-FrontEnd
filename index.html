@@ -1,54 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ATOMS Data Submission</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif; padding: 40px; background: #f5f7fa;
-    }
-    input, textarea {
-      width: 400px; padding: 10px; margin: 5px; border-radius: 4px; border: 1px solid #ccc;
-    }
-    button {
-      padding: 10px 15px; background-color: #4a90e2; color: white; border: none; border-radius: 4px; cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATOMS - AI Powered Talent Matching</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding-bottom: 50px;
+            line-height: 1.6;
+        }
+        header, section {
+            padding: 40px;
+            text-align: center;
+        }
+        header {
+            background-color: #1f1f1f;
+            border-bottom: 2px solid #4a90e2;
+        }
+        h1, h2, h3 {
+            color: #4a90e2;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1f1f1f;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-  <h2>ATOMS ML Model Input Form</h2>
 
-  <input id="name" placeholder="Name"><br>
-  <input id="current_job" placeholder="Current Job"><br>
-  <textarea id="skills" placeholder="Skills"></textarea><br>
-  <textarea id="education" placeholder="Education"></textarea><br>
-  <textarea id="activities" placeholder="Other Activities"></textarea><br>
-  <textarea id="projects" placeholder="Projects"></textarea><br>
-  <textarea id="profile" placeholder="Personal Profile"></textarea><br>
-  
-  <button onclick="submitData()">Submit Data</button>
+<header>
+    <h1>ATOMS</h1>
+    <p>AI Powered Talent and Opportunity Matching System</p>
+    <p>University of Louisville • Sponsored by Betaflix</p>
+</header>
 
-  <script>
-    function submitData() {
-      const formURL = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"; // Change your form URL here
+<section class="container">
+    <h2>About ATOMS</h2>
+    <p>
+        ATOMS revolutionizes hiring by leveraging artificial intelligence to match candidates with job opportunities, enhancing efficiency and accuracy in the recruitment process. Our solution utilizes advanced ML and NLP techniques and is built for scalability using Docker and GPU acceleration.
+    </p>
 
-      const formData = new FormData();
-      formData.append("entry.NAME_ENTRY_ID", document.getElementById('name').value);
-      formData.append("entry.JOB_ENTRY_ID", "FRESHER"); // fixed or dynamic input
-      formData.append("entry.SKILLS_ENTRY_ID", document.getElementById('skills').value);
-      formData.append("entry.EDUCATION_ENTRY_ID", document.getElementById('education').value);
-      formData.append("entry.ACTIVITIES_ENTRY_ID", document.getElementById('activities').value);
-      formData.append("entry.PROJECTS_ENTRY_ID", document.getElementById('projects').value);
-      formData.append("entry.PROFILE_ENTRY_ID", document.getElementById('projects').value);
+    <h2>Our Team</h2>
+    <ul style="list-style: none;">
+        <li>Nicolas Perez – General Support & Testing</li>
+        <li>Mackenzi Mumford – Web Development</li>
+        <li>Edmundo Leets – Data Cleaning & API Integration</li>
+        <li>Christopher Clingerman – Model Architecture & Training</li>
+        <li>John Meija – UI Development & Model Training</li>
+        <li>Binyamin Abukar – UI Design & Model Training</li>
+    </ul>
 
-      fetch(formData, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
-      })
-      .then(() => alert("Submitted Successfully!"))
-      .catch((err) => console.error('Error:', err));
-    }
-  </script>
+    <h2>Submit Your Information</h2>
+    <div style="display:flex; justify-content:center; margin-top:30px;">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeJ2DvtKelwMb42oeaIcDapL5-aPY52UGp8o1tOhzdgXSEzeg/viewform?embedded=true" 
+        width="700" 
+        height="1235" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 ATOMS Team • University of Louisville</p>
+</footer>
+
 </body>
 </html>
